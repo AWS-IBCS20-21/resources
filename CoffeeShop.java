@@ -13,6 +13,14 @@ public class CoffeeShop {
 
     System.out.println("Is your name, " + name);
 
+    Scanner orderIn = new Scanner(System.in);
+    String order = orderIn.nextLine();
+
+    //Change the order
+    String newOrder = order.replace('a', 'z');
+    System.out.println(order);
+    System.out.println(newOrder);
+
   }
 
 }
