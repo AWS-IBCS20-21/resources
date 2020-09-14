@@ -4,7 +4,6 @@ public class CoffeeShop {
 
   public static void main(String[] args) {
 
-    System.out.println("");
     System.out.println("Welcome to the Coffee Shop");
     System.out.println("");
 
@@ -20,6 +19,8 @@ public class CoffeeShop {
     String newOrder = order.replace('a', 'z');
     System.out.println(order);
     System.out.println(newOrder);
+
+    System.out.println("this is new");
 
   }
 
