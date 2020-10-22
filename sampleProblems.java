@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class sampleProblems {
 
   public sampleProblems() {
@@ -29,8 +31,24 @@ public class sampleProblems {
   // repeat
   // "baseball", 2 --> true
   public boolean prefixAgain(String s, int n) {
+    int beginIndex = 0;
+    int endIndex = n;
+    String prefix = s.substring(beginIndex, endIndex);
 
-    return false;
+
+    int compareTally = 0;
+    for (int i = 0; i < s.length() - n; i++) {
+
+      if (prefix.equals(s.substring(i, i + n))) {
+        compareTally = compareTally + 1;
+      }
+    }
+    if (compareTally > 1) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
 
@@ -53,12 +71,25 @@ public class sampleProblems {
 
   public static void main(String[] args) {
 
-    sampleProblems sample = new sampleProblems();
+    //Working with Array examples
+
+    int[] myArr = {3, 5, 0, 1};
+
+    for (int x : myArr) {
+      System.out.print(x);
+    }
+    System.out.println("");
+
+
+
+
+    //sampleProblems sample = new sampleProblems();
 
     //test problem 1
-    System.out.println(sample.doubleChar("Hi Computer Class"));
+    //System.out.println(sample.doubleChar("Hi Computer Class"));
 
 
     //test problem 2
+    //System.out.println(sample.prefixAgain("trylitrlwtr", 2));
   }
 }
