@@ -30,6 +30,12 @@ public class Flashcards {
     question = new JLabel("Sample Question");
     flashWin.add(question);
     question.setBounds(250, 150, 200, 50);
+
+    flashWin.addWindowListener(new WindowAdapter() {
+       public void windowClosing(WindowEvent windowEvent){
+          System.exit(0);
+       }
+    });
   }
 
   public void updateQuestion(String q) {
@@ -40,8 +46,28 @@ public class Flashcards {
     Flashcards f = new Flashcards();
     f.updateQuestion("Hey class. What is the weather?");
 
-    HashMap<String, String> cards = HashMap<String, String>();
+    HashMap<String, String> cards = new HashMap<String, String>();
     cards.put("What is the capital of Washington?", "Olympia");
+
+    ArrayList<String> questions = new ArrayList<String>();
+    questions.add("What is the capital of Washington?");
+    questions.add("Who is the president of the U.S.?");
+    questions.add("What's 1 + 1?");
+    questions.add("How do you say tree in french?");
+    questions.add("What is the meaning of life?");
+
+    System.out.println(questions.size());
+
+    Random r = new Random();
+    int sizeA = questions.size();
+    for (int i=0; i<sizeA; i++) {
+      int choice = r.nextInt(questions.size());
+      String qu = questions.get(choice);
+      System.out.println(qu);
+      System.out.println(cards.get(qu));
+      questions.remove(choice);
+    }
+    //System.out.println(r.nextInt(10));
 
   }
 
